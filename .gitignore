@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+data/
+*.pth
+*.ckpt
+checkpoints/
+runs/
+.clearml/
+*.log

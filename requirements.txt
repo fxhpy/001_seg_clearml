@@ -1,0 +1,8 @@
+clearml
+torch
+torchvision
+segmentation-models-pytorch
+timm
+tensorboard
+numpy
+pillow
