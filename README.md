@@ -1,4 +1,4 @@
-# seg-clearml-main
+# 001_seg_clearml
 
 使用 ClearML 调度 LakeFS 数据下载和图像语义分割训练。训练模型为 DeepLabV3Plus，默认使用 MobileNet V2 编码器、ImageNet 预训练权重、4 个类别，输入缩放为 512 × 512。
 
@@ -17,7 +17,7 @@
 在 PowerShell 中创建环境并安装依赖：
 
 ```powershell
-Set-Location 'D:\Desktop\seg-clearml-main'
+Set-Location 'D:\Desktop\001_seg_clearml'
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\clearml-init.exe
@@ -68,7 +68,7 @@ Git 负责本地版本记录，GitHub 保存远程仓库。流程是：检查文
 
 ### 2. 准备本地仓库
 
-本项目原有 `.git.bak` 中保存了 3 次提交；应保留历史恢复仓库，不必重新初始化。对下一个完全没有 Git 历史的项目，才执行 `git init -b main`。
+本项目已有 Git 历史，直接使用现有仓库，不必重新初始化。对完全没有 Git 历史的新项目，才执行 `git init -b main`。
 
 在项目目录执行（姓名和邮箱只在没有正确配置时设置，使用自己的信息）：
 
@@ -108,13 +108,13 @@ gh auth setup-git --hostname github.com
 如果还没有远程仓库，下面是**新建私有仓库**的示例。先将 `YOUR_GITHUB_USERNAME` 替换为登录的用户名；确定公开时将 `--private` 改为 `--public`：
 
 ```powershell
-gh repo create YOUR_GITHUB_USERNAME/seg-clearml-main --private --source . --remote origin --push
+gh repo create YOUR_GITHUB_USERNAME/001_seg_clearml --private --source . --remote origin --push
 ```
 
 如果已在 GitHub 创建**空仓库**，使用下面这条路径（与上一条二选一）：
 
 ```powershell
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/seg-clearml-main.git
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/001_seg_clearml.git
 git push -u origin HEAD
 ```
 
