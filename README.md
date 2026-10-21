@@ -105,10 +105,10 @@ gh auth setup-git --hostname github.com
 
 ### 4. 创建或连接远程仓库
 
-如果还没有远程仓库，下面是**新建私有仓库**的示例。先将 `YOUR_GITHUB_USERNAME` 替换为登录的用户名；确定公开时将 `--private` 改为 `--public`：
+如果还没有远程仓库，下面是**新建公开仓库**的示例。先将 `YOUR_GITHUB_USERNAME` 替换为登录的用户名：
 
 ```powershell
-gh repo create YOUR_GITHUB_USERNAME/001_seg_clearml --private --source . --remote origin --push
+gh repo create YOUR_GITHUB_USERNAME/001_seg_clearml --public --source . --remote origin --push
 ```
 
 如果已在 GitHub 创建**空仓库**，使用下面这条路径（与上一条二选一）：
