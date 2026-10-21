@@ -32,7 +32,7 @@ def preprocess_image(img, mask):
     # 随机裁剪
 
     i, j, h, w = T.RandomCrop.get_params(img, (720, 1280))
-    
+
     img = F.crop(img, i, j, h, w)
     mask = F.crop(mask, i, j, h, w)
 
@@ -65,7 +65,7 @@ class DroneDataset(Dataset):
 
     def __len__(self):
         return len(self.image_filenames) ## 返回数据集大小，供 DataLoader 调用
-    
+
     def __getitem__(self, index):
 
         img = Image.open(os.path.join(self.img_path, self.image_filenames[index])).convert('RGB')
@@ -74,12 +74,12 @@ class DroneDataset(Dataset):
 
         if self.need_handle:
             img, mask = preprocess_image(img, mask) ## 数据增强
-            
+
         img = F.resize(img, [self.input_size,self.input_size])
 
         mask = F.resize(mask, [self.input_size,self.input_size])
 
-        img_array = np.array(img)        
+        img_array = np.array(img)
         mask_array = np.array(mask)  ## 转换为numpy数组
         mask_array = np.where(mask_array == 4, 3, mask_array)  ## 将类别4归入Ignore(3)
 

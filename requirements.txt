@@ -1,8 +1,9 @@
-clearml>=1.0
-torch>=2.0
-torchvision>=0.15
-segmentation-models-pytorch>=0.3
-timm>=0.9
-tensorboard>=2.0
-numpy>=1.20
-pillow>=9.0
+clearml
+torch
+torchvision
+segmentation-models-pytorch
+numpy
+pillow
+tensorboard
+boto3
+tqdm
